@@ -1,0 +1,20 @@
+{
+  "name": "babel-plugin-do-demand-loading",
+  "version": "0.0.2",
+  "description": "按需加载插件",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demos-platform/babel-plugin-diana.git"
+  },
+  "author": "muyunyun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/demos-platform/babel-plugin-diana/issues"
+  },
+  "homepage": "https://github.com/demos-platform/babel-plugin-diana#readme",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-types": "^6.26.0"
+  }
+}
