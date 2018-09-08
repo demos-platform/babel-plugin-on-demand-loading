@@ -1,8 +1,8 @@
 {
   "name": "babel-plugin-on-demand-loading",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "按需加载插件",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/demos-platform/babel-plugin-diana.git"
