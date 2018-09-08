@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-do-demand-loading",
+  "name": "babel-plugin-on-demand-loading",
   "version": "0.0.2",
   "description": "按需加载插件",
   "main": "index.js",
