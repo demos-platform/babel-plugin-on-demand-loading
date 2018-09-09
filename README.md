@@ -8,14 +8,39 @@
 npm install --save-dev babel-plugin-on-demand-loading
 ```
 
-在 `.babelrc` 配置如下即可生效：
+使用方式一：在 `.babelrc` 里进行配置(推荐):
 
-```
+```js
+// .babelrc
 {
   "plugins": [
     ["on-demand-loading", {"library": "diana"}]
   ]
 }
+
+// 配合 webpack 里的 babel-loader
+module: {
+  rules: [{
+    test: /\.js$/,
+    loader: "babel-loader",
+  }]
+},
+```
+
+使用方式二：在 webpack 里进行配置：
+
+```diff
+module: {
+  rules: [{
+    test: /\.js$/,
+    loader: "babel-loader",
++   options: {
++     plugins: [
++       ["on-demand-loading", { "library": "diana" }],
++     ]
++   }
+  }]
+},
 ```
 
 ### Principle
