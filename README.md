@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/babel-plugin-on-demand-loading.svg)](https://badge.fury.io/js/babel-plugin-on-demand-loading) ![LICENSE MIT](https://img.shields.io/npm/l/babel-plugin-on-demand-loading.svg)
 
-[diana](https://github.com/MuYunyun/diana) 配套按需加载 babel 插件
+[diana](https://github.com/MuYunyun/diana) 配套按需加载 babel 插件，[更新日志](CHANGELOG.md)
 
 ### Usage
 
