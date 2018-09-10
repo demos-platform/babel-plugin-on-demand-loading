@@ -55,5 +55,31 @@ import { equal } from 'diana'
 import equal from 'diana/lib/equal'
 ```
 
+### 源码分析
+
+```js
+const babel = require('babel-core');
+const types = require('babel-types');
+
+module.exports = function (babel) {
+  return {
+    visitor: {
+      ImportDeclaration(path, ref = { opts: {} }) {
+        let node = path.node
+        let { specifiers } = node
+        if (ref.opts.library === node.source.value
+          && !types.isImportDefaultSpecifier(specifiers[0])         // 过滤 import { equal } from 'diana'
+          && !types.isImportNamespaceSpecifier(specifiers[0])) {    // 过滤 import * as _ from 'diana'
+          let newImports = specifiers.map(specifier => {
+            return types.importDeclaration([types.importDefaultSpecifier(specifier.local)], types.stringLiteral(`${node.source.value}/lib/${specifier.local.name}`))
+          })
+          path.replaceWithMultiple(newImports)
+        }
+      }
+    }
+  }
+}
+```
+
 [按需加载实践](https://github.com/demos-platform/onDemandLoading)
 
